@@ -1,28 +1,39 @@
+{%load static %}
 <html>
   <head>
     <title>Boring tab title</title>
-  </head>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+      </head>
 <body>
 
-  <p>Hello <em>you</em>!</p>
+  <p>Hello <em>you</em>!
+  What's up?
+  Welcome to <strong>the</strong>:<p>
 
-  <p>What's up?</p>
-
-  <p>Welcome to <strong>the</strong>:<p>
-
-  <div>
-      <h1> Football drama blog </h1>
+  <div class="page-header">
+      <h1><a href="/">Football drama blog </h1>
   </div>
   <div>
-    <h2> The <em> coup d'état </em> in the locker-room somewhere in the outskirts of Brussels.</h2>
+    <h2> The <em> coup d'état </em> in the locker-room somewhere in the outskirts of Brussels. Master of diplomacy, teamwork and spelling is adding some new fantastic chapters for the stories all players could tell to their grand-children. Textbook example of craziness.</h2>
   <div>
-    {% for post in posts %}
-    <div>
-      <p>published: {{ post.published_date }}</p>
-      <h1><a href="">{{ post.title }}</a></h1>
-      <p>{{ post.text|linebreaksbr }}</p>
-  </div>
-    {% endfor %}
+    <div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>published: {{ post.published_date }}</p>
+                    </div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
   </div>
   <h2><em>extra information</em><h2>
   <h3> grocery list </h3>
